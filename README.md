@@ -15,6 +15,7 @@ cs154   automata, complexity theory                                          yes
 cs254   advanced of cs154                                                     no
 cs354   advanced of cs154                                                     no
 cs258   introduction to programming language theory                           no
+cs106   programming abstraction                                              yes
 cs109   introduction to probability for computerscientists                    no
 cs255   introduction to cryptography                                          no
 cs161   design and analysts of algorithms                                    yes
