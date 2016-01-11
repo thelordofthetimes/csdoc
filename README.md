@@ -19,4 +19,4 @@ cs109   introduction to probability for computerscientists                    no
 cs255   introduction to cryptography                                          no
 cs161   design and analysts of algorithms                                    yes
 cs143   compiler                                                             yes
-cs107   computer organization and system                                     yes
+cs107   computer organization and system                                      no
