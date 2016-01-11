@@ -18,4 +18,5 @@ cs258   introduction to programming language theory                           no
 cs109   introduction to probability for computerscientists                    no
 cs255   introduction to cryptography                                          no
 cs161   design and analysts of algorithms                                    yes
-cs107   computer organization and system                                      no
+cs143   compiler                                                             yes
+cs107   computer organization and system                                     yes
