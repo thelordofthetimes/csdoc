@@ -11,8 +11,8 @@ contains computer science documents
 
 code    name                                                            avaiable
 cs103   mathematical foundations                                             yes
-cs154   automata, complexity theory                                          yes 
-cs254   advanced of cs154                                                     no  
+cs154   automata, complexity theory                                          yes
+cs254   advanced of cs154                                                     no
 cs354   advanced of cs154                                                     no
 cs258   introduction to programming language theory                           no
 cs109   introduction to probability for computerscientists                    no
