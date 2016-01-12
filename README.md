@@ -21,7 +21,9 @@ cs354   advanced of cs154                                                     no
 
 cs258   introduction to programming language theory                           no
 
-cs106   programming abstraction                                              yes
+cs106a  programming methodology                                              yes
+
+cs106b  programming abstraction                                              yes
 
 cs109   introduction to probability for computerscientists                   yes
 
