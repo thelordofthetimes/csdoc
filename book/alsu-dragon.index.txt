@@ -343,3 +343,36 @@
 7.8.5   exercises for section 7.8
 7.9     summary of chapter 7
 7.10    references for chapter 7
+8       code generation
+8.1     issues in the designof a code generator
+8.1.1   input to the code generator
+8.1.2   the target program
+8.1.3   instrucction selection
+8.1.4   register allocation
+8.1.5   evaluation order
+8.2     the target language
+8.2.1   a simple target machine model
+8.2.2   program and instruction costs
+8.2.3   exercises for section 8.2
+8.3     addresses in the target code
+8.3.1   static allocation
+8.3.2   stack allocation
+8.3.3   run-time addresses for names
+8.3.4   exercises for section 8.3
+8.4     basic blocks and flow graphs
+8.4.1   basic blocks
+8.4.2   next-use information
+8.4.3   flow graphs
+8.4.4   representation of flow graphs
+8.4.5   loops
+8.4.6   exercises for section 8.4
+8.5     optimization of basic blocks
+8.5.1   the DAG representation of basic blocks
+8.5.2   finding local common subexpressions
+8.5.3   dead code elimination
+8.5.4   the use of algebraic identities
+8.5.5   representation of array references
+8.5.6   pointer assignmentsand procedure calls
+8.5.7   reassembling basicblocks from DAG's
+8.5.8   exercises for section 8.5
+8.6     a simple code generator
