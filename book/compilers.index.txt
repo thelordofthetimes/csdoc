@@ -31,49 +31,49 @@
 1.6.4       explicit access control                                         0031
 1.6.5       dynamic scope                                                   0031
 1.6.6       parameter passing mechanisms                                    0033
-1.6.7       aliasing
-1.6.8       exercises for section 1.6
-1.7         summary of chapter 1
-1.8         references for chapter 1
-2           a simple syntax-directed translator
-2.1         introduction
-2.2         syntax definition
-2.2.1       definition of grammars
-2.2.2       derivations
-2.2.3       parse trees
-2.2.4       ambiguity
-2.2.5       associativity of operators 
-2.2.6       precedence of operators
-2.2.7       exercises for sections 2.2
-2.3         syntax-directed translation
-2.3.1       postfix notation
-2.3.2       synthesized attributes
-2.3.3       simple syntax-directed definitions
-2.3.4       tree traversals
-2.3.5       translation schemes
-2.3.6       exercises for section 2.3
-2.4         parsing
-2.4.1       top-down parsing
-2.4.2       predictive parsing
-2.4.3       when to use e-productions
-2.4.4       designing a predictive parser
-2.4.5       left recursion
-2.4.6       exercisesfor section 2.4
-2.5         a translator for simple expressions
-2.5.1       abstract and concrete syntax
-2.5.2       adapting the translation scheme
-2.5.3       procedures for the noterminals
-2.5.4       simplifying the translator
-2.5.5       the complete program
-2.6         lexical analysis
-2.6.1       removal of white space and comments
-2.6.2       reading ahead
-2.6.3       constants
-2.6.4       recognizing keywords and identifiers
-2.6.5       a lexical analyzer
-2.6.6       exercises for section 2.6
-2.7         symbol tables
-2.7.1       symbol table per scope
+1.6.7       aliasing                                                        0035
+1.6.8       exercises for section 1.6                                       0035
+1.7         summary of chapter 1                                            0036
+1.8         references for chapter 1                                        0038
+2           a simple syntax-directed translator                             0039
+2.1         introduction                                                    0040
+2.2         syntax definition                                               0042
+2.2.1       definition of grammars                                          0042
+2.2.2       derivations                                                     0044
+2.2.3       parse trees                                                     0045
+2.2.4       ambiguity                                                       0047
+2.2.5       associativity of operators                                      0048
+2.2.6       precedence of operators                                         0048
+2.2.7       exercises for sections 2.2                                      0051
+2.3         syntax-directed translation                                     0052
+2.3.1       postfix notation                                                0053
+2.3.2       synthesized attributes                                          0054
+2.3.3       simple syntax-directed definitions                              0056
+2.3.4       tree traversals                                                 0056
+2.3.5       translation schemes                                             0057
+2.3.6       exercises for section 2.3                                       0060
+2.4         parsing                                                         0060
+2.4.1       top-down parsing                                                0061
+2.4.2       predictive parsing                                              0064
+2.4.3       when to use e-productions                                       0065
+2.4.4       designing a predictive parser                                   0066
+2.4.5       left recursion                                                  0067
+2.4.6       exercisesfor section 2.4                                        0068
+2.5         a translator for simple expressions                             0068
+2.5.1       abstract and concrete syntax                                    0069
+2.5.2       adapting the translation scheme                                 0070
+2.5.3       procedures for the noterminals                                  0072
+2.5.4       simplifying the translator                                      0073
+2.5.5       the complete program                                            0074
+2.6         lexical analysis                                                0076
+2.6.1       removal of white space and comments                             0077
+2.6.2       reading ahead                                                   0078
+2.6.3       constants                                                       0078
+2.6.4       recognizing keywords and identifiers                            0079
+2.6.5       a lexical analyzer                                              0081
+2.6.6       exercises for section 2.6                                       0084
+2.7         symbol tables                                                   0086
+2.7.1       symbol table per scope                                          0089
 2.7.2       the use of symbol tables
 2.8         intermediate code generation
 2.8.1       two kinds of intermediate representations
