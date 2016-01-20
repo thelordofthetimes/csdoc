@@ -3,28 +3,30 @@
     00  set theory
     01  direct proofs
     02  indirect proofs
-    03  induction, part 1 
-    04  induction, part 2
-    05  graphs and relations
-    06  functions and cardinality
-    07  unequal cardinalities
-    08  mathematical logic 1
-    09  mathematical logic 2
-    10  mathematical logic 3
-    11  finite automata 1
-    12  finite automata 2
-    13  finite automata 3
-    14  the pumping lemma
-    15  pushdown automata
-    16  CFGs
-    17  turing machines
-    18  turing machines 2
-    19  turing machines 3
-    20  decidability and undecidability
-    21  co-RE and reducibility
-    22  mapping reducibility
-    23  mapping reducibility 2, complexity
-    24  P and NP
-    25  NP-completeness
-    26  NP-completeness 2
-    27  the big picture
+    03  mathematical induction, part 1 
+    04  mathematical induction, part 2
+    05  mathematical induction, part 3
+    06  graphs
+    07  mathematical logic 1
+    08  mathematical logic 2
+    09  mathematical logic 3
+    10  pigeonhole principle, function
+    11  cardinality
+    12  binary relations
+    13  finite automata 1
+    14  finite automata 2
+    15  finite automata 3
+    16  regular expressions
+    17  nonregular languages
+    18  context-free grammars
+    19  turing machines, part 1
+    20  turing machines, part 2
+    21  impossible problems, part 1
+    22  impossible problems, part 2
+    23  impossible problems, part 3
+    24  impossible problems, part 4
+    25  complexity theory, part 1
+    26  complexity theory, part 2
+    27  NP-completenets, part 1
+    28  NP-completenets, part 2
+    29  the big picture
