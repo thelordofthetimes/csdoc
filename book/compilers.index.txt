@@ -1,0 +1,661 @@
+1.          introduction                                                    0001
+1.1         language processors                                             0001
+1.1.1       exercisesfor sections 1.1                                       0003
+1.2         the structure of a compiler                                     0004
+1.2.1       lexical analysis                                                0005
+1.2.2       syntax analysis                                                 0008
+1.2.3       semantic analysis                                               0008
+1.2.4       intermediate code generation                                    0009
+1.2.5       code optimization                                               0010
+1.2.6       code generation                                                 0010
+1.2.7       symbol-table management                                         0011
+1.2.8       the grouping of phases into passes                              0011
+1.2.9       compiler-construction toolsi                                    0012
+1.3         the evolution of programming languages                          0012
+1.3.1       the move to higher-level languages                              0013
+1.3.2       impacts on compilers                                            0014
+1.3.3       exercises for section 1.3                                       0014
+1.4         the science of building a compileri                             0015
+1.4.1       modeling in compiler design and implement                       0015
+1.2.2       the science of code optimization                                0015
+1.5         applications of compiler technology                             0017
+1.5.1       implementation of high-level programming languages              0017
+1.5.2       optimizations for computer architectures                        0019
+1.5.3       design of new computer architectures                            0021
+1.5.4       program translations                                            0022
+1.5.5       software productivity tools                                     0023
+1.6         programming language basics                                     0025
+1.6.1       the static/dynamic distinction                                  0025
+1.6.2       environments and states                                         0026
+1.6.3       static scope and block structure                                0028
+1.6.4       explicit access control                                         0031
+1.6.5       dynamic scope                                                   0031
+1.6.6       parameter passing mechanisms                                    0033
+1.6.7       aliasing
+1.6.8       exercises for section 1.6
+1.7         summary of chapter 1
+1.8         references for chapter 1
+2           a simple syntax-directed translator
+2.1         introduction
+2.2         syntax definition
+2.2.1       definition of grammars
+2.2.2       derivations
+2.2.3       parse trees
+2.2.4       ambiguity
+2.2.5       associativity of operators 
+2.2.6       precedence of operators
+2.2.7       exercises for sections 2.2
+2.3         syntax-directed translation
+2.3.1       postfix notation
+2.3.2       synthesized attributes
+2.3.3       simple syntax-directed definitions
+2.3.4       tree traversals
+2.3.5       translation schemes
+2.3.6       exercises for section 2.3
+2.4         parsing
+2.4.1       top-down parsing
+2.4.2       predictive parsing
+2.4.3       when to use e-productions
+2.4.4       designing a predictive parser
+2.4.5       left recursion
+2.4.6       exercisesfor section 2.4
+2.5         a translator for simple expressions
+2.5.1       abstract and concrete syntax
+2.5.2       adapting the translation scheme
+2.5.3       procedures for the noterminals
+2.5.4       simplifying the translator
+2.5.5       the complete program
+2.6         lexical analysis
+2.6.1       removal of white space and comments
+2.6.2       reading ahead
+2.6.3       constants
+2.6.4       recognizing keywords and identifiers
+2.6.5       a lexical analyzer
+2.6.6       exercises for section 2.6
+2.7         symbol tables
+2.7.1       symbol table per scope
+2.7.2       the use of symbol tables
+2.8         intermediate code generation
+2.8.1       two kinds of intermediate representations
+2.8.2       construction of syntax trees
+2.8.3       static checking
+2.8.4       three-address code
+2.8.5       exercises for section 2.8
+2.9         summary of chapter 2
+3           lexical analysis
+3.1         the role of the lexical analyzer
+3.1.1       lexical analysis versus parsing
+3.1.2       tokens, patterns, and lexemes
+3.1.3       attributes for tokens
+3.1.4       lexical errors
+3.1.5       exercises for section 3.1
+3.2         input buffering
+3.2.1       buffer pairs
+3.2.2       sentinels
+3.3         specification of tokens
+3.3.1       strings and languages
+3.3.2       operations on language
+3.3.3       regular expressions
+3.3.4       regular definitions
+3.3.5       extensions of regularexpressions
+3.3.6       exercises for section 3.3
+3.4         recognition of tokens
+3.4.1       transition diagrams
+3.4.2       recognition of reserved words and identifiers
+3.4.3       completion of the running example
+3.4.4       architecture of a transition-diagram-based lexical analyzer
+3.4.5       exercises for section 3.4
+3.5         the lexical-analyzer generator lex
+3.5.1       use of lex
+3.5.2       structure of lex programs
+3.5.3       conflict resolution in lex
+3.5.4       the lookahead operator
+3.5.5       exercises for section 3.5
+3.6         finite automata
+3.6.1       nondeterministic finite automata
+3.6.2       transition tables
+3.6.3       acceptance of input strings by automata
+3.6.4       deterministic finite automata
+3.6.5       exercises for section 3.6
+3.7         from regular expressions to automata
+3.7.1       conversion of an NFA to a DFA
+3.7.2       simulation of an NFA
+3.7.3       efficiency of NFA simulation 
+3.7.4       construction of an NFA from a regular expression
+3.7.5       efficiency of string-processing algorithms
+3.7.6       exercises for section 3.7
+3.8         design of a lexical-analyzer generator
+3.8.1       the structure of the generated analyzer
+3.8.2       pattern matching based on NFA's
+3.8.3       DFA's for lexical analyzers
+3.8.4       implementing the lookahead operator
+3.8.5       exercises for section 3.8
+3.9         optimization of DFA-based pattern matchers
+3.9.1       important states of an NFA
+3.9.2       functions computed from the syntaxtree
+3.9.3       computing unliable, firstpos, and lastpos
+3.9.4       computing followpos
+3.9.5       converting a regular expression directly to a DFA
+3.9.6       minimizing the number of states of a DFA
+3.9.7       state minimization in lexical analyzers
+3.9.8       trading time for space in DFA simulation
+3.9.9       exercises for section 3.9
+3.10        summary of chapter 3
+3.11        references for chapter 3
+4           syntax analysis
+4.1         introduction
+4.1.1       the role of the parser
+4.1.2       representative grammars
+4.1.3       syntax error handling
+4.1.4       error-recovery trategies
+4.2         cotnext-free grammars
+4.2.1       the formal definition of a context-free grammar
+4.2.2       notational conventions
+4.2.3       derivations
+4.2.4       parse trees and derivations
+4.2.5       ambiguity
+4.2.6       verifying the language generated by a grammar
+4.2.7       context-free grammars versus regular expressions
+4.2.8       exercises for section 4.2
+4.3         writing a grammar
+4.3.1       lexical versus syntactic analysis
+4.3.2       eliminating ambiguity
+4.3.3       elimination of left recursion
+4.3.4       left factoring
+4.3.5       non-context-free language constructs
+4.3.6       exercises for section 4.3
+4.4         top-down parsing
+4.4.1       recursive-descent parsing
+4.4.2       first and follow
+4.4.3       LL(1) grammars
+4.4.4       nonrecursive predictive parsing
+4.4.5       error recovery in predictive parsing
+4.4.6       exercises for section 4.4
+4.5         bottom-up parsing
+4.5.1       reductions
+4.5.2       handle pruning
+4.5.3       shift-reduce parsing
+4.5.4       conflicts during shift-reduce parsing
+4.5.5       exercises for section 4.5
+4.6         introduction to LR parsing: simple LR
+4.6.1       why LR parsers?
+4.6.2       items and the LR(0) automaton
+4.6.3       the LR-parsing algorithm
+4.6.4       constructing slr-parsing tables
+4.6.5       viable prefixes
+4.6.6       exercises for section 4.6
+4.7         more powerful LR parsers
+4.7.1       canonical LR(1) items
+4.7.2       constructing LR(1) sets of items
+4.7.3       cononical LR(1) parsing tables
+4.7.4       constructing LALR parsing tables
+4.7.5       efficient construction of LALR parsing tables
+4.7.6       compaction of LR parsing tables
+4.7.7       exercises for section 4.7
+4.8         using ambiguous grammars
+4.8.1       precedence and associativity to resolve conflicts
+4.8.2       the "dangling-else" ambiguity
+4.8.3       error recovery in LR parsing
+4.8.4       exercises for section 4.8 
+4.9         parser generators
+4.9.1       the parser generator YACC
+4.9.2       using YACC with ambiguous grammars
+4.9.3       creating YACC lexical analyzers with lex
+4.9.4       error recovery in YACC
+4.9.5       exercises for section 4.9
+4.10        summary of chapter 4
+4.11        references for chapter 4
+5           syntax-directed translation
+5.1.1       syntax-directed definitions
+5.1.2       evaluating an SDD at the nodes of a parse tree
+5.1.3       exercises for section 5.1
+5.2         evaluation of orders for SDD's
+5.2.1       dependency graphs
+5.2.2       ordering the evaluation of attributes
+5.2.3       s-attributed definitions
+5.2.4       l-attributed definitions
+5.2.5       semantic ruleswith controlled side effects
+5.2.6       exercises for section 5.2   
+5.3         applications of syntax-directed translation
+5.3.1       construction of syntax trees
+5.3.2       the structure of a type
+5.3.3       exercises for section 5.3
+5.4         syntax-directed translation schemes
+5.4.1       postfix translation schemes
+5.4.2       parser-stack implementation of postfix SDT's
+5.4.3       SDT's with actions inside productions
+5.4.4       eliminating left recursion from SDT's
+5.4.5       SDT's for l-attributed definitions
+5.4.6       exercises for section 5.4
+5.5         implementing l-attributed SDD's
+5.5.1       translation during recursive-descent parsing
+5.5.2       on-the-fly code generation
+5.5.3       l-attributed SDD's and LL parsing
+5.5.4       bottom-up parsing of l-attributed SDD's
+5.5.5       exercises for section 5.5
+5.6         summary of chapter 5
+5.7         references for chapter 5
+6           intermediate-code generation
+6.1         variants of syntax trees
+6.1.1       directed acyclic graphs for expression
+6.1.2       the vaule-number method for constructing DAG's
+6.1.3       exercises for section 6.1
+6.2         three-address code
+6.2.1       addresses and instructions
+6.2.2       quadruples
+6.2.3       triples
+6.2.4       static single-assignment form
+6.2.5       exercises for section 6.2
+6.3         types and declarations
+6.3.1       type expressions
+6.3.2       type equivalence
+6.3.3       declarations
+6.3.4       storage layout for local names
+6.3.5       sequencesof declarations
+6.3.6       fields in records and classes
+6.3.7       exercises for section 6.3
+6.4         translation of expressions
+6.4.1       operations within expressions
+6.4.2       incremental translation
+6.4.3       addressing array elements
+6.4.4       translation of array elements
+6.4.5       translation of array references
+6.4.5       exercises for section 6.4
+6.5         type checking
+6.5.1       rules for type checking
+6.5.2       type conversions
+6.5.3       overloading of functions and operators
+6.5.4       type inference and polymorphic functions
+6.5.5       an algorithm for unification
+6.5.6       exercises for section 6.5
+6.6         control flow
+6.6.1       boolean expressions
+6.6.2       short-circuit code
+6.6.3       flow-of-control statements
+6.6.4       control-flow translation of booleanexpressions
+6.6.5       avoiding redundant gotos
+6.6.6       boolean values and jumping code
+6.6.7       exercises for section 6.6
+6.7         backpatching
+6.7.1       one-pass code generation using backpatching
+6.7.2       backpatching for boolean expressions
+6.7.3       flow-of-control statements
+6.7.4       break-, continue-, and goto-statements
+6.7.5       exercises for section 6.7
+6.8         switch-statemetns
+6.8.1       translationof switch-statements
+6.8.2       syntax-directed translation of switch-statements
+6.8.3       exercises for section 6.8
+6.9         intermediate code for procedures
+6.10        summary of chapter 6
+6.11        references for chapter 6
+7           run-time environments
+7.1         storage organization
+7.1.1       static versus dynamic storage allocation
+7.2         stack allocation of space
+7.2.1       activation trees
+7.2.2       activation records
+7.2.3       calling sequences
+7.2.4       variable-length data on the stack
+7.2.5       exercises for section 7.2
+7.3         access to nonlocal data on the stack
+7.3.1       data access without nested procedures
+7.3.2       issuses with nested procedures
+7.3.3       a language with nested procedure declarations
+7.3.4       nesting depth
+7.3.5       access links
+7.3.6       manipulating access links
+7.3.7       access links for procedure parameters
+7.3.8       displays
+7.3.9       exercisesfor section 7.3
+7.4         heap management
+7.4.1       the memory manager
+7.4.2       the memory hierachy of a computer
+7.4.3       locality in programs
+7.4.4       reducing fragmentation
+7.4.5       manual deallocation requests
+7.4.6       exercises for section 7.4 
+7.5         introduction to gargabe collection
+7.5.1       design goals for garbage collectors
+7.5.2       reachability
+7.5.3       reference counting garbage collectors
+7.5.4       exercises for section 7.5
+7.6         introduction to trace-based collection
+7.6.1       a basic mark-and-sweep collector
+7.6.2       basic abstraction
+7.6.3       optimizing mark-and-sweep
+7.6.4       mark-and-compact garbage collectors
+7.6.5       copying collectors
+7.6.6       comparing costs
+7.6.7       exercisesfor section 7.6
+7.7         short-pause garbage collection
+7.7.1       incremental garbage collection
+7.7.2       incremental reachability analysis
+7.7.3       partial-collection basicss
+7.7.4       generational garbage collection
+7.7.5       the train algorithm
+7.7.6       exercises for section 7.7
+7.8         advanced topics in garbage collection
+7.8.1       parallel and concurrent gargabe collection
+7.8.2       partial objectrelocation
+7.8.3       conservative collection for unsafe languages
+7.8.4       weak references
+7.8.5       exercises for section 7.8
+7.9         summary of chapter 7
+7.10        references for chapter 7
+8           code generation
+8.1         issues in the designof a code generator
+8.1.1       input to the code generator
+8.1.2       the target program
+8.1.3       instrucction selection
+8.1.4       register allocation
+8.1.5       evaluation order
+8.2         the target language
+8.2.1       a simple target machine model
+8.2.2       program and instruction costs
+8.2.3       exercises for section 8.2
+8.3         addresses in the target code
+8.3.1       static allocation
+8.3.2       stack allocation
+8.3.3       run-time addresses for names
+8.3.4       exercises for section 8.3
+8.4         basic blocks and flow graphs
+8.4.1       basic blocks
+8.4.2       next-use information
+8.4.3       flow graphs
+8.4.4       representation of flow graphs
+8.4.5       loops
+8.4.6       exercises for section 8.4
+8.5         optimization of basic blocks
+8.5.1       the DAG representation of basic blocks
+8.5.2       finding local common subexpressions
+8.5.3       dead code elimination
+8.5.4       the use of algebraic identities
+8.5.5       representation of array references
+8.5.6       pointer assignmentsand procedure calls
+8.5.7       reassembling basicblocks from DAG's
+8.5.8       exercises for section 8.5
+8.6         a simple code generator
+8.6.1       register and address descriptors
+8.6.2       the code-generation algorithm
+8.6.3       design of the function getReg
+8.6.4       exercises for section 8.6
+8.7         peephole optimization
+8.7.1       eliminating redundant loads and stores
+8.7.2       eliminating unreachable code
+8.7.3       flow-of-control optimizations
+8.7.4       algebraic simpllification and reduction in strength
+8.7.5       use of machine idioms
+8.7.6       exercises for section 8.7
+8.8         register allocation and assignment
+8.8.1       global register allocation
+8.8.2       usage counts
+8.8.3       register assignment for outer loops
+8.8.4       register allocation by graph coloring
+8.8.5       exercises for section 8.8
+8.9         instruction selection by tree rewriting
+8.9.1       tree-translation schemes
+8.9.2       code generation by tiling an input tree
+8.9.3       pattern matching by parsing
+8.9.4       routines for semantic checking
+8.9.5       general tree matching
+8.9.6       exercises for section 8.9
+8.10        optimal code generation for expressions
+8.10.1      ershow numbers
+8.10.2      generating code from labeled expression trees
+8.10.3      evaluating expressions with an insufficient supply of register
+8.10.4      exercises for section 8.10
+8.11        dynamic programming code-generation
+8.11.1      contiguous evaluation
+8.11.2      the dynamic programming algorithm
+8.11.3      exercieses for section 8.11
+8.12        summary of chapter 8
+8.13        references for chapter 8
+9           machine-independent optimizations
+9.1         the principal sources of optimization
+9.1.1       causes of redundancy
+9.1.2       a running example: quicksort
+9.1.3       semantics-preserving transromations
+9.1.4       global common subexpressions
+9.1.5       copy propagation
+9.1.6       dead-code elimination
+9.1.7       code motion
+9.1.8       induction variables and reduction in strength
+9.1.9       exercises for section 9.1
+9.2         introduction to data-flow analysis
+9.2.1       the data-flow abstraction
+9.2.2       the data-flowanalysis schema
+9.2.3       data-flow schemas on basic blocks
+9.2.4       reaching definitions
+9.2.5       live-variable ananlysis
+9.2.6       avaiable expressions
+9.2.7       summary
+9.2.8       excercisesfor section 9.2
+9.3         foundations of data-flow analysis
+9.3.1       semilattices
+9.3.2       transfer functions
+9.3.3       the iterative algorithm for general frameworks
+9.3.4       meaning of a data-flow solution
+9.3.5       exercises for section 9.3
+9.4         constant propagation
+9.4.1       data-flowvalues for the constant-propagation framework
+9.4.2       the meet for the constant-propagation framework
+9.4.3       transfer functions for the constant-propagation framework
+9.4.4       monotonicity of the constant-propagation framework
+9.4.5       nondistributivity of the constant-propagation framework
+9.4.6       interpretation of the results
+9.4.7       exercises for section 9.4
+9.5         partial-redundancy elimination
+9.5.1       the sources of redundancy
+9.5.2       can all redundancy be eliminated?
+9.5.3       the lazy-code-motion problem
+9.5.4       anticipation of expression
+9.5.5       the lazy-code-motion algorithm
+9.5.6       excercises for section 9.5
+9.6         loops in flow graphs
+9.6.1       dominators
+9.6.2       depth-first ordering
+9.6.3       edges in a depth-first spanning tree
+9.6.4       back edges and reducibility
+9.6.5       depth of a flow graph
+9.6.6       natural loops
+9.6.7       speed of convergence of iterative data-flow algorithms
+9.6.8       exercises for section 9.6
+9.7         region-based analysis
+9.7.1       regions
+9.7.2       region hierachies for reducible flow graphs
+9.7.3       overview of a region-based analysis
+9.7.4       neccessary assumptions about transfer functions
+9.7.5       an algorithm for region-based analysis
+9.7.6       handling nonreducible flow graphs
+9.7.7       excercises for section 9.7
+9.8         symbolic analysis
+9.8.1       affine expressions of reference variables
+9.8.2       data-flow problem formuation
+9.8.3       region-based symbolic analysis
+9.8.4       exercises for section 9.8
+9.9         summary of chapter 9
+9.10        references for chapter 9
+10.         instruction-level parallelism
+10.1        processor architectures
+10.1.1      instruction pipelines and branch delyays
+10.1.2      pipelined execution
+10.1.3      multiple instruction issue
+10.2        code-scheduling constraints
+10.2.1      data dependence
+10.2.2      finding dependences among memory accesses
+10.2.3      tradeoff between register usage and parallelism
+10.2.4      phase ordering between register allocation andcode scheduling
+10.2.5      control dependence
+10.2.6      speculative execution support
+10.2.7      a basic machine model
+10.2.8      excercises for section 10.2
+10.3        basic-block scheduling
+10.3.1      data-dependence graphs
+10.3.2      list scheduling of basic blocks
+10.3.3      prioritized topological orders
+10.3.4      exercises for section 10.3
+10.4        golbal code scheduling
+10.4.1      primitive code motion
+10.4.2      upward code motion
+10.4.3      downward code motion
+10.4.4      updating data dependences
+10.4.5      global scheduling algorithms
+10.4.6      advanced code motion techniques
+10.4.7      interaction with dynamic schedulers
+10.4.8      exercises for section 10.4
+10.5        software pipelining
+10.5.1      introduction
+10.5.2      software pipelining of loops
+10.5.3      register allocation and code generation
+10.5.4      do-across loops
+10.5.5      goals and constraint of software pipelining
+10.5.6      a software-pipelining algorithm
+10.5.7      sheduling acyclic data-dependence graphs
+10.5.8      scheduling cyclic dependence graphs
+10.5.9      improvements to the pipelining algorithms
+10.5.10     modular variable expansion
+10.5.11     conditional statements
+10.5.12     hardware support for software pipelining
+10.5.13     excercises for section 10.5
+10.6        summary of chapter 10
+10.7        references for chapter 10
+11          optimizing for parallelism and locality
+11.1        basic concepts
+11.1.1      multiprocessors
+11.1.2      parallelism in applications
+11.1.3      loop-level parallelism
+11.1.4      data locality
+11.1.5      introduction to affine transform theory
+11.2        matrix multiply: an in-depth example
+11.2.1      the matrix-multiplication algorithm
+11.2.2      optimizations
+11.2.3      cache interference
+11.2.4      excercises for section 11.2
+11.3        iteration spaces
+11.3.1      constructing interation spaces from loop nests
+11.3.2      execution order for loop nests
+11.3.3      matrix formulation of inequalities
+11.3.4      incorporating symbolic constants
+11.3.5      conrolling the order of execution
+11.3.6      changinge axes
+11.3.7      excercises for section 11.3
+11.4        affine array indexes
+11.4.1      affine accesses
+11.4.2      affine and nonaffine accesses in pratice
+11.4.3      exercises for section 11.4
+11.5        data reuses
+11.5.1      types of reuses
+11.5.2      self reuse
+11.5.3      self-spatial reuse
+11.5.4      group reuse
+11.5.5      excercises for section 11.5
+11.6        array data-dependence analysis
+11.6.1      definition of data dependence of array accesses
+11.6.2      integer linear programming
+11.6.3      the GCD test
+11.6.4      heuristics for solving integer linear programs
+11.6.5      solving general integer linear programs
+11.6.6      summary
+11.6.7      excercises for section 11.6
+11.7        finding synchronization-free parallelism
+11.7.1      an introductory example
+11.7.2      affine space partitions
+11.7.3      space-partition constraints
+11.7.4      solving space-partition constraints
+11.7.5      a simple code-generation algorithm
+11.7.6      eliminating empty interations
+11.7.7      eliminating tests from innermost loops
+11.7.8      source-code transforms
+11.7.9      excecises for section 11.7
+11.8        synchronization between parallel loops
+11.8.1      aconstant number of synchronizations
+11.8.2      program-dependence graphs
+11.8.3      hierarchical time
+11.8.4      the parallelization algorithm
+11.8.5      exercises for section 11.8
+11.9        pipelining
+11.9.1      what is pipelining?
+11.9.2      successive over-ralaxtion (SOR): an example
+11.9.3      fully permutable loops
+11.9.4      pipelining fully permutable loops
+11.9.5      general theory
+11.9.6      time-partion constrains
+11.9.7      solving time-partition constrains by Farkas'Lemma
+11.9.8      codetransformations
+11.9.9      parallelism with minimum synchronization
+11.9.10     excercises for section 11.9
+11.10       locality optimizations
+11.10.1     temporal locality of computed data
+11.10.2     array contraction
+11.10.3     partition interleaving
+11.10.4     putting it all together
+11.10.5     excercises for section 11.10
+11.11       other uses of affine transforms
+11.11.1     distributed memory machines
+11.11.2     multi-instruction-issue processors
+11.11.3     vector and SIMD instructions
+11.11.4     prefetching
+11.12       summary of chapter 11
+11.13       references for chapter 11
+12          interprocedural analysis
+12.1        basic concepts
+12.1.1      call graphs
+12.1.2      context sensitivity
+12.1.3      call strings
+12.1.4      cloning-based context-sensitive analysis
+12.1.5      summary-based context-sensitive analysis
+12.1.6      exercises for section 12.1
+12.2        why interprocedural analysis?
+12.2.1      virtual method invocation
+12.2.2      pointer alias analysis
+12.2.3      parallelization
+12.2.4      detection of software errors and vulnerabilities
+12.2.5      SQL injection
+12.2.6      buffer overflow
+12.3        a logicalrepresentation of data flow
+12.3.1      introduction to datalog
+12.3.2      datalog rules
+12.3.3      intensional and extensional predicates
+12.3.4      execution of datalog programs
+12.3.5      incremental evaluation of datalog programs
+12.3.6      problematic datalog rules
+12.3.7      excercises for section 12.3
+12.4        a simple pointer-analysis algorithm
+12.4.1      why is pointer analysis difficult
+12.4.2      a model for pointers and references
+12.4.3      flow insensitivity
+12.4.4      the formualation in datalog
+12.4.5      using type information
+12.4.6      exercises for section 12.4
+12.5        context-insensitive interprocedural analysis
+12.5.1      effects of a method invocation
+12.5.2      call graph discovery in datalog
+12.5.3      dynamic loading and reflection
+12.5.4      excercises for section 12.5
+12.6        context-sensitive pointer analysis
+12.6.1      contexts and call strings
+12.6.2      adding context to datalog rules
+12.6.3      additional observations about sensirivity
+12.6.4      excercises for section 12.6.4
+12.7        datalog implementation by BDD's
+12.7.1      binary decision diagrams
+12.7.2      transformations on BDD's
+12.7.3      representing relations by BDD's
+12.7.4      relational operations as BDD operations
+12.7.5      using BDD's for points-to analysis
+12.7.6      excercises for section 12.7
+12.8        summary of chapter 12
+12.9        references for chapter 12
+
+A           complete front end
+A.1         the source language
+A.2         main
+A.3         lexical analyzer
+A.4         symbol tables and types
+A.5         intermediate code for expressions
+A.6         jumping code for boolean expressions
+A.7         intermediate code for statements
+A.8         parser
+A.9         creating the front end
+B           finding linearly independent solutions
