@@ -1,0 +1,81 @@
+the elements of programming style - kernighan, plauger
+
+    - write clearly - don't be too clever
+    - say what you mean, simply and directly
+    - use library functions
+    - avoid temporary variables
+    - write clearly - don't sacrifice clarity for efficiency
+    - let the machine  do the dirty work
+    - replace repetitive expressions by calls to a common functions
+    - parentthesize to avoid ambiguity
+    - choose variable names that won't be confused
+    - avoid the Fortran arithmetic IF
+    - avoid unnecessary branches
+    - use the good features of a language, avoid the bad ones
+    - don't use condiional branches as a substitute for a logical expression
+    - use the telephone test for readability
+    - use DO-END and identing to delimit groups of statements
+    - use IF-ELSE to emphasize that only one of two actions is to be performed
+    - use DO and DO-WHILE to emphasize the presence of loops
+    - make your programs read from top to bottom
+    - use IF...ELSE IF..ELSE IF...ELSE... to implement multi-way branches
+    - use the fundamental control flow constructs
+    - write first in an easy-to-understand pseudo-language, then translate
+      into whatever language you have to use
+    - avoid THEN-IF and null ELSE
+    - avoid ELSE GOTO and ELSE RETURN
+    - follow each decision as closely as possible with its associated action
+    - use data arrays to avoid repetitive control sequences
+    - choose a data representation that makes the program simple
+    - don't stop with your draft
+    - modularize, use subroutines
+    - make the coupling between modules visible
+    - each module should do one thing well
+    - make sure every module hides something
+    - let the data structure the program
+    - don't patch bad code, rewrite it
+    - write and test big program in small pieces
+    - use recursive procedures for recursively-defined data structures
+    - test input for validity and plausibility
+    - make sure input cannot violate limits of the program
+    - terminate input by end-of-file or marker, not by count
+    - identify bad input, recover if possible
+    - treat end of file conditions in a uniform manner
+    - make input easy to prepare and output self-explanatory
+    - use uniform input formats
+    - make input easy to proofread
+    - use free-form input when possible
+    - use self-identifying input. allow defaults. echo both on output
+    - localize input and ouput in subroutines
+    - make sure all variables are initialized before use
+    - don't stop at one bug
+    - use bebugging compilers
+    - initialize constants with DATA statements or INITIAL attributes, intialize
+      variables with executable code
+    - watch out for off-by-one errors
+    - take care to branch the right way on equality
+    - avoid multiple exits from loops
+    - make sure your code does nothing gracefully
+    - test programs at their boundary values
+    - program defensively
+    - 10.0 times 0.1 hardly ever 1.0
+    - don't compare floating point numbers just for equality
+    - make it right before you make it faster
+    - keep it right when you make it faster
+    - make it clear before you make it faster
+    - don't sacrifice clarity small gains in efficiency
+    - let your compiler do the simple optimizations
+    - don't strain to re-use code, reoranize instead
+    - make sure special cases are truly special
+    - keep it simple to make it faster
+    - don't diddle code to make it faster, find a better algorithm
+    - instrument your programs. measure before making efficiency changes
+    - make sure comments and code agree
+    - don't just echo the code with comments, make every comment count
+    - don't comment bad code, rewrite it
+    - use variable names that mean something
+    - use statement labels that mean something
+    - format a program to help the reader understand it
+    - indent to show the logical structure of a program
+    - document your data layouts
+    - don't over-comment
