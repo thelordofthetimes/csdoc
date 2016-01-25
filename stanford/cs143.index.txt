@@ -1,0 +1,24 @@
+1. slides
+
+    00  course overview
+    01  cool: the course project
+    02  lexical analysis
+    03  parsing 1
+    04  parsing 2
+    05  parsing 3
+    06  parsing 4
+    07  parsing 5
+    08  parsing 6
+    09  semantic analysis 1
+    10  semantic analysis 2
+    11  runtime conventions
+    12  code generation
+    13  operational semantics
+    14  local optimization
+    15  golbal optimization
+    16  register allocation
+    17  garbage collection
+
+2. handouts
+
+    03  parsing
