@@ -148,7 +148,7 @@
 4.1.2       representative grammars
 4.1.3       syntax error handling
 4.1.4       error-recovery trategies
-4.2         cotnext-free grammars
+4.2         context-free grammars
 4.2.1       the formal definition of a context-free grammar
 4.2.2       notational conventions
 4.2.3       derivations
