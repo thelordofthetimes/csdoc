@@ -34,3 +34,5 @@ cs161   design and analysts of algorithms                                    yes
 cs143   compiler                                                             yes
 
 cs107   computer organization and system                                      no
+
+
